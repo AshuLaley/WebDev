@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                border: 2px solid;
+            }
+            #buttonalign{
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <table cellpadding=10>
+            <tr>
+                <h1>Internet Usage Survey</h1>
+
+                <p>
+                    This Survey is being conducted tohelp identify the Internet usage patterns of our customers.
+                    Please take a few moments to complete ans submit this short form. Thank you for your cooperation.
+                </p>
+            </tr>
+            <tr>
+                <td>
+                  <label >What type of internet connection do you have?<br>(Select One)</label>
+                </td>
+                <td >
+                    <select name="tpna"  id="select-box" >
+                        <option>Dial-up</option>
+                        <option>DSL</option>
+                        <option>High Speed Cable</option>
+                        <option>Others</option>
+                    </select>
+                </td><br>
+            </tr>
+            <tr><br>
+                <td>
+                    <label for="cah" >What type of computer do you use most at home </label>
+                </td>
+                <td>
+                    <input type="radio" name="cah" >
+                    <label for="desktop">Desktop</label>
+                    <input type="radio" name="cah" >
+                    <label for="laptop">Laptop</label>
+                </td>
+            </tr><br>
+            <br>
+            <tr>
+                <td>
+                    <label for="uInt" >How would you describe your main reason for using the internet? </label>
+                </td>
+                <td>
+                    <input type="radio" name="uInt" >
+                    <label for="todo">To Do work -related activities</label><br>
+                    <input type="radio" name="uInt" >
+                    <label for="todoSc">To Do school-related activities</label><br>
+                    <input type="radio" name="uInt" >
+                    <label for="ente">For Entertainment purpose</label><br>
+                    <input type="radio" name="uInt" >
+                    <label for="oa">Other Activities</label><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <fieldset><legend>Types of sites visited</legend>
+                        
+                            
+                                <label for="webacc">What type of web sites do you access most often?</label>
+                                <br>
+        
+                            
+                                <input type="checkbox" name="si">
+                                <label for="si">Self/Improvement</label><br>
+        
+                                <input type="checkbox" name="enter">
+                                <label for="enter">Entertainment</label><br>
+        
+                                <input type="checkbox" name="nas">
+                                <label for="nas">News and Sports</label><br>
+        
+                                <input type="checkbox"  name="ref">
+                                <label for="ref">Reference</label><br>
+
+                                <input type="checkbox"  name="email">
+                                <label for="email">Email</label><br>
+                            
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset><legend>Time spent using internet</legend>
+                        
+                            
+                                <label for="webacc">During an average week, how long do you spend online?</label>
+                                <br>
+        
+                            
+                                <input type="checkbox" name="3">
+                                <label for="3">0-3 hours</label><br>
+        
+                                <input type="checkbox" name="6">
+                                <label for="6">4-6 hours</label><br>
+        
+                                <input type="checkbox" name="10">
+                                <label for="10">7-10 hours</label><br>
+        
+                                <input type="checkbox"  name="14">
+                                <label for="14">11-14 hours</label><br>
+
+                                <input type="checkbox"  name="15">
+                                <label for="15">15+ hours</label><br>
+                            
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ips">Please Comment on your opinion concerning Internet Privacy and safety.</label><br>
+                    <textarea name="ips" cols="50" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    First Name:
+                    <input type="text" name="fname" placeholder="First Name" size="50">
+                </td>
+                <td>
+                    Last Name:
+                    <input type="text" name="lname" placeholder="Last Name" size="50">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Age:
+                    <input type="number" name="age" placeholder="age" >
+                </td>
+                <td>
+                   Zip Code:
+                    <input type="number" name="zip" placeholder="Zip Code">
+                </td>
+            </tr>
+            <tr>
+                <td id="buttonalign" >
+                    <button type="button" onclick="alert('Submitted')" >Click to Submit</button>
+                    <button type="reset" onclick="alert('Form Cleared')">Clear Form</button>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border:3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+        }
+        button{
+            background-color: rgb(255, 244, 202);
+            color:rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: black;
+            color:White;
+            border-radius: 10px;
+        }
+        div{
+            margin:auto;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        input{
+            margin:10px
+        }
+        h3{
+            margin-left:5em;
+        }
+        #set,h3{
+            display: inline-block;
+            text-align: center;
+        }
+        #res{
+            color: rgb(206, 3, 3);
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript Program to Print Minimum in Set</h2>
+    
+    <div id="main">
+        Drop a number in Set: <input type="number" id="num">
+        <button onclick="min()">Get Result</button>
+    </div>
+
+    <h3>Set:</h3>
+    <div id="set"></div>
+    <br>
+    <div id="res"></div>
+    <script>
+        let res=Number.MAX_VALUE;
+        function min(){
+            let n = parseInt(document.getElementById("num").value);
+            document.getElementById('res').innerHTML = "";
+            document.getElementById('set').innerHTML += `${n},`;
+            if(res>n){
+                res=n;
+            }
+            document.getElementById('res').innerHTML += `Minimum in Set is = ${res} <br>`;
+        }
+    </script>
+</body>
+</html>

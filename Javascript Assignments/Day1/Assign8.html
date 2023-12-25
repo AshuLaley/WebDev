@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript Program to Print Power of a number</h2>
+
+    <div id="main">
+        Enter a number: <input type="number" id="num1">
+        Enter power: <input type="number" id="num2">
+        <button onclick="pow()">Get Result</button>
+    </div>
+
+    <div id="res"></div>
+
+    <script>
+        function pow() {
+            let n = parseInt(document.getElementById("num1").value);
+            let m = parseInt(document.getElementById("num2").value);
+            document.getElementById('res').innerHTML = "";
+            let res = 0;
+            if (typeof (n) != NaN) {
+                res = n ** m;
+            }
+            document.getElementById('res').innerHTML += `${n}<sup>${m}</sup> = ${res} <br>`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Form
+        </title>
+        <style>
+            table,td{
+                border: 2px solid ;
+                border-collapse: collapse;
+                background-color: rgb(253, 109, 109);
+            }
+        </style>
+    </head>
+    <body>
+        <form action="form" method="post">
+            <table>
+                <tr>
+                    <td>
+                         <label for="empcode">Name</label>     
+                    </td>  
+                    <td>      
+                         <input type="text" name="name"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="empcode">Employee Code</label>
+                    </td>
+                    <td>
+                    <input type="number" name="empcode"><br>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                       <label for="dept">Department</label>
+                    </td>
+                
+                    <td>
+                        <input type="radio" name="dept" value="admin">
+                        <label for="adm">Admin</label><br>
+                    
+                         <input type="radio" name="dept" value="hr">                    
+                         <label for="hr">HR</label><br>
+                    
+                        <input type="radio" name="dept" value="technical">                   
+                        <label for="techical">Technical</label><br>
+
+                        <input type="radio" name="dept" value="account">
+                        <label for="account">Account</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="doj">Date Of Joining</label>
+                    </td>
+                    <td>
+                        <input type="date" name="doj"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Address</label><br>
+                    </td>
+                    <td>
+                        <textarea name="address" cols="45" rows="5"></textarea>                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tpa">Training Programs Attended</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="html">
+                        <label for="html">HTML/DHTML</label><br>
+
+                        <input type="checkbox" name="java">
+                        <label for="java">Java</label><br>
+
+                        <input type="checkbox" name="server">
+                        <label for="server">client/Server</label><br>
+
+                        <input type="checkbox"  name="net">
+                        <label for="net">.NET</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <label >Training programmes need to attend</label>
+                    </td>
+                    <td>
+                        <select name="tpna" id="select-box">
+                            <option>JAVASCRIPT</option>
+                            <option>JSTRUTS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Send the information at</label>
+                    </td>
+                    <td> 
+                        <a href="mailto:empinfo@patni.com" >empinfo@patni.com</a>
+                    </td>
+                 </tr>
+            </table>
+        </form>
+    </body>
+</html>

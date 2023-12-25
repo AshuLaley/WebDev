@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border:3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+        }
+        button{
+            background-color: rgb(255, 244, 202);
+            color:rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: black;
+            color:White;
+            border-radius: 10px;
+        }
+        div{
+            margin:auto;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        input{
+            margin:10px
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript Program to Print Multiplication Table</h2>
+    
+    <div id="main">
+        Enter a number: <input type="number" onchange="table1()" id="num">
+        <button onclick="table1()">Get Table</button>
+    </div>
+
+    <div id="multi-table"></div>
+
+    <script>
+        function table1(){
+            let n = parseInt(document.getElementById("num").value);
+            document.getElementById('multi-table').innerHTML = "";
+            let res;
+            if(typeof(n)!=NaN){
+                for(let i=1;i<=10;i++){
+                    res=i*n;
+                    document.getElementById('multi-table').innerHTML += `${n} x ${i} = ${res} <br>`;
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

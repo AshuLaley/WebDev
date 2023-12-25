@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Assignment 3</title>
+    <style>
+        input{
+            margin:10px;
+        }
+        button{
+            margin:5px;
+            margin-left:10px;
+        }
+    </style>
+        <script>
+            function evenNos(){
+                var num232 = document.getElementById("num").value;
+                let res = document.getElementById("res");
+    
+                while(num232--){
+                    if(num232%2==0){
+                        res.innerHTML += `${num232} <br>`;
+                    }
+                }
+    
+            }
+    
+            function refresh(){
+                console.log(num232.value);
+                num232.value="";
+                res.innerHTML= '';
+            }
+        </script>
+</head>
+<body>
+    Enter the number
+    <input type="number" id="num"><br>
+
+
+    <button onclick="evenNos()">Show Result</button>
+
+    <button onclick="refresh()">Refresh</button>
+
+    <div id="res"></div>
+
+    <script>
+        function evenNos(){
+            var num232 = document.getElementById("num").value;
+            let res = document.getElementById("res");
+
+            while(num232--){
+                if(num232%2==0){
+                    res.innerHTML += `${num232} <br>`;
+                }
+            }
+
+        }
+
+        function refresh(){
+            console.log(num232.value);
+            num232.value="";
+            res.innerHTML= '';
+        }
+    </script>
+</body>
+</html>

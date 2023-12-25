@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript Program to Calculate compound Interest</h2>
+
+    <div id="main">
+        Enter Principal Amount : <input type="number" id="num1"><br>
+        Enter Rate of Interest : <input type="number" id="num2"><br>
+        Enter Period in years : <input type="number" id="num3"><br>
+        <button onclick="pow()">Get Result</button>
+    </div>
+
+    <div id="res"></div>
+
+    <script>
+        function pow() {
+            let p = parseInt(document.getElementById("num1").value);
+            let r = parseInt(document.getElementById("num2").value);
+            let t = parseInt(document.getElementById("num3").value);
+
+            document.getElementById('res').innerHTML = "";
+            let res = 0;
+            if (typeof (p) != NaN) {
+                res = (p * ((1 + (r / 100)) ** t)) - p;
+            }
+            res = res.toFixed(2);
+            document.getElementById('res').innerHTML = `Compound Interest = ${res} <br>`;
+        }
+    </script>
+</body>
+
+</html>

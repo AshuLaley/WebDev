@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        #res {}
+    </style>
+</head>F
+
+<body>
+    <h2>Assignment 10 Javascript</h2>
+
+
+    <h3 id="date-display"></h3>
+    <p id="days-left"></p>
+
+    <script>
+        function displayDate() {
+            const today = new Date();
+            const weekday = today.toLocaleDateString('en-US', { weekday: 'long' });
+            const date = today.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+
+            let greeting = 'Welcome';
+            const hour = today.getHours();
+            if (hour >= 4 && hour < 12) {
+                greeting += ', and Good Morning';
+            } else if (hour >= 12 && hour < 17) {
+                greeting += ', and Good Afternoon';
+            } else if (hour >= 17 && hour < 20) {
+                greeting += ', and Good Evening';
+            } else {
+                greeting += ', and Good Night';
+            }
+
+            const daysLeft =  today.getDate() + ((today.getMonth() + 1) * 30) - today.getMonth(); // Approximate calculation
+
+            document.getElementById('date-display').textContent = `Today is ${weekday}, ${date}, ${greeting} to You.`;
+            document.getElementById('days-left').textContent = `Number of days left till end of year: ${daysLeft}`;
+        }
+
+        window.onload = displayDate;
+
+    </script>
+</body>
+
+</html>
