@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript Program to perform String operations</h2>
+
+    <form id="myForm">
+        Enter String: <input type="text" id="mainString" name="mainString"><br><br>
+        Enter Sub String: <input type="text" id="subString" name="subString"><br><br>
+        Replace with String: <input type="text" id="replaceString" name="replaceString"><br><br>
+        <input type="radio" id="search" name="action" value="search"> Search substring in main string<br>
+        <input type="radio" id="uppercase" name="action" value="uppercase"> To Upper Case<br>
+        <input type="radio" id="lowercase" name="action" value="lowercase"> To Lower Case<br>
+        <input type="radio" id="trim" name="action" value="trim"> Trim spaces<br>
+        <input type="radio" id="concatenate" name="action" value="concatenate"> Concatenate<br>
+        <input type="radio" id="replace" name="action" value="replace"> Replace<br><br>
+        <button type="button" onclick="manipulateString()">Submit Query</button><br><br>
+        <p id="output"></p>
+      </form>
+    
+      <script>
+        function manipulateString() {
+          const mainString = document.getElementById("mainString").value;
+          const subString = document.getElementById("subString").value;
+          const replaceString = document.getElementById("replaceString").value;
+          const selectedAction = document.querySelector('input[name="action"]:checked').value;
+    
+          let outputString = "";
+    
+          switch (selectedAction) {
+            case "search":
+              outputString = mainString.includes(subString) ? "Substring found" : "Substring not found";
+              break;
+            case "uppercase":
+              outputString = mainString.toUpperCase();
+              break;
+            case "lowercase":
+              outputString = mainString.toLowerCase();
+              break;
+            case "trim":
+              outputString = mainString.trim();
+              break;
+            case "concatenate":
+              outputString = mainString + subString;
+              break;
+            case "replace":
+              outputString = mainString.replace(subString, replaceString);
+              break;
+          }
+    
+          document.getElementById("output").textContent = outputString;
+        }
+      </script>
+</body>
+
+</html>

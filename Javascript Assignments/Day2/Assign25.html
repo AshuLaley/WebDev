@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+        span{
+            color:red;
+            font-size: 0.8em;;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Order Details</h1>
+
+<form onsubmit="return validateForm()">
+  <label for="orderId">Order ID:</label>
+  <input type="text" id="orderId" required><br>
+
+  <label for="custName">Customer Name:</label>
+  <input type="text" id="custName" required>
+  <span id="custNameError" class="error"></span><br>
+
+  <label for="billingDate">Billing Date (DD-MM-YYYY):</label>
+  <input type="text" id="billingDate" required><br>
+
+  <label for="shippingDate">Shipping Date (DD-MM-YYYY):</label>
+  <input type="text" id="shippingDate" required>
+  <span id="dateError" class="error"></span><br>
+
+  <label for="orderTotal">Order Total:</label>
+  <input type="text" id="orderTotal" required><br><br>
+
+  <button type="submit" onclick="displayOrder()">Display</button>
+</form>
+
+<script>
+function validateForm() {
+  const custName = document.getElementById("custName").value.trim();
+  const billingDate = document.getElementById("billingDate").value;
+  const shippingDate = document.getElementById("shippingDate").value;
+
+  let isValid = true;
+
+  // Validate customer name
+  if (custName.length <= 5) {
+    document.getElementById("custNameError").textContent = "Customer name must be greater than 5 characters.";
+    isValid = false;
+  } else {
+    document.getElementById("custNameError").textContent = "";
+  }
+
+  // Validate dates
+  if (isValid && new Date(billingDate) > new Date(shippingDate)) {
+    document.getElementById("dateError").textContent = "Billing date cannot be greater than shipping date.";
+    isValid = false;
+  } else {
+    document.getElementById("dateError").textContent = "";
+  }
+
+  return isValid;
+}
+
+function displayOrder() {
+  const orderId = document.getElementById("orderId").value;
+  const custName = document.getElementById("custName").value;
+  const billingDate = document.getElementById("billingDate").value;
+  const shippingDate = document.getElementById("shippingDate").value;
+  const orderTotal = document.getElementById("orderTotal").value;
+
+  const order = {
+    orderId: orderId,
+    custName: custName,
+    billingDate: billingDate,
+    shippingDate: shippingDate,
+    orderTotal: orderTotal
+  };
+
+
+  const newWindow = window.open("", "OrderDetails", "width=400,height=300");
+  newWindow.document.write(`
+    <h1>Order Details</h1>
+    <table>
+      <tr><td>Order ID:</td><td>${order.orderId}</td></tr>
+      <tr><td>Customer Name:</td><td>${order.custName}</td></tr>
+      <tr><td>Billing Date:</td><td>${order.billingDate}</td></tr>
+      <tr><td>Shipping Date:</td><td>${order.shippingDate}</td></tr>
+      <tr><td>Order Total:</td><td>$${order.orderTotal}</td></tr>
+    </table>
+  `);
+}
+</script>
+</body>
+
+</html>

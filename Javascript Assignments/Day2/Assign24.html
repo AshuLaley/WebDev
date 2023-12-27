@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+        span{
+            color:red;
+            font-size: 0.8em;;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+
+<form onsubmit="return validateForm()">
+  <label for="username">Username:</label>
+  <input type="text" id="username" required>
+  <span id="usernameError" class="error"></span><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" required>
+  <span id="passwordError" class="error"></span><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<script>
+function validateForm() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+
+  let isValid = true;
+
+  // Validate username
+  if (!username.match(/^[a-zA-Z]{6,10}$/)) {
+    document.getElementById("usernameError").textContent = "Username must be 6-10 letters.";
+    isValid = false;
+  } else {
+    document.getElementById("usernameError").textContent = "";
+  }
+
+  // Validate password
+  if (!password.match(/^(?=.*[0-9])(?=.*#)[a-zA-Z0-9#]{9,}$/)) {
+    document.getElementById("passwordError").textContent = "Password must be > 8 characters, contain a #, and at least one digit.";
+    isValid = false;
+  } else {
+    document.getElementById("passwordError").textContent = "";
+  }
+
+  return isValid;
+}
+</script>
+</body>
+
+</html>

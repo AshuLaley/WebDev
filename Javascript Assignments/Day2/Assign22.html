@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript Program to read from Array</h2>
+
+    <div>This div does not contain the string.</div>
+  <div>This div has the training string!</div>
+  <div>Another div without the string.</div>
+  <div>Training is part of learning.</div>
+
+  <button onclick="searchDivs()">Search Divs</button>
+  <div id="results"></div>
+
+  <script>
+    function searchDivs() {
+      const searchTerm = "training";
+      const foundDivs = [];
+      const resultsDiv = document.getElementById("results");
+
+      // Get all div elements
+      const divs = document.querySelectorAll("div");
+
+      divs.forEach(div => {
+        const text = div.textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+          foundDivs.push(div);
+          div.classList.add("found-div");
+        }
+      });
+
+      // Display results
+      resultsDiv.innerHTML = `Found ${foundDivs.length} divs containing "${searchTerm}":<br>`;
+      foundDivs.forEach(div => {
+        resultsDiv.innerHTML += `- ${div.innerHTML}<br>`;
+      });
+    }
+  </script>
+</body>
+
+</html>

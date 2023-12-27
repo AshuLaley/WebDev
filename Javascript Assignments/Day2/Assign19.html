@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div,form {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript Program to perform String operations</h2>
+
+     <form id="sumForm">
+        Enter a positive integer less than 1000: <input type="number" id="numberInput"><br><br>
+        <button type="button" onclick="calculateSum()">Calculate Sum</button>
+        <p id="result"></p>
+      </form>
+    
+      <script>
+        function calculateSum() {
+          const numberInput = document.getElementById("numberInput").value;
+    
+          try {
+            const number = parseInt(numberInput);
+            if (number < 0 || number >= 1000) {
+              throw new Error("Number must be a positive integer less than 1000.");
+            }
+    
+            const sumOfDigits = sumDigits(number);
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Sum of the digits of ${number} is ${sumOfDigits}`;
+            resultElement.classList.remove("error");
+          } catch (error) {
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = error.message;
+            resultElement.classList.add("error");
+          }
+        }
+    
+        function sumDigits(number) {
+          let sum = 0;
+          while (number > 0) {
+            sum += number % 10;
+            number = Math.floor(number / 10);
+          }
+          return sum;
+        }
+      </script>
+</body>
+
+</html>

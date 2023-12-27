@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div,form {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript Program to perform String operations</h2>
+
+    <h3>Member Names</h3>
+    <p id="result"></p>
+  
+    <script>
+      var members = ["JOHN", "STEVE", "BEN", "DAMON", "IAN"];
+  
+      // Join names with commas and convert to uppercase
+      var memberString = members.join(", ").toUpperCase();
+  
+      // Display the string
+      document.getElementById("result").textContent = "Members of my Group are:\n" + memberString;
+    </script>
+</body>
+
+</html>

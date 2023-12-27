@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(228, 255, 255);
+            padding-bottom: 10px;
+        }
+
+        button {
+            background-color: rgb(255, 244, 202);
+            color: rgb(33, 33, 33);
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: White;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Payment Calculator</h1>
+
+    <h2>Loan Information</h2>
+    <label for="loanAmount">Amount of the loan:</label><br>
+    <input type="text" id="loanAmount"><br><br>
+    
+    <label for="interestRate">Annual percentage rate of interest:</label><br>
+    <input type="text" id="interestRate"><br><br>
+    
+    <label for="repaymentPeriod">Repayment period in years:</label><br>
+    <input type="text" id="repaymentPeriod"><br><br>
+    
+    <button onclick="calculateAndValidate()">Calculate Payments</button>
+    
+    <h2 id="payment-info">Payment Information</h2>
+    <label for="monthlyPayment">Your monthly payment will be:</label><br>
+    <input type="text" id="monthlyPayment" readonly><br><br>
+    
+    <label for="totalPayment">Your total payment will be:</label><br>
+    <input type="text" id="totalPayment" readonly><br><br>
+    
+    <label for="totalInterest">Your total interest payments will be:</label><br>
+    <input type="text" id="totalInterest" readonly><br><br>
+    
+    <script>
+    function calculateAndValidate() {
+      // Get loan information values
+      const loanAmount = parseFloat(document.getElementById("loanAmount").value);
+      const interestRate = parseFloat(document.getElementById("interestRate").value);
+      const repaymentPeriod = parseFloat(document.getElementById("repaymentPeriod").value);
+    
+      // Perform validation
+      if (loanAmount > 1500000) {
+        alert("Amount of loan cannot exceed 15 lakhs.");
+        document.getElementById("loanAmount").value = "";
+        return; // Exit function if validation fails
+      }
+    
+      if (repaymentPeriod < 7 || repaymentPeriod > 15) {
+        alert("Repayment period should be between 7 and 15 years.");
+        document.getElementById("repaymentPeriod").value = "";
+        return; // Exit function if validation fails
+      }
+    
+      const SI = (loanAmount * interestRate * repaymentPeriod)/100;
+
+      // Perform payment calculations (replace with actual payment formula)
+    //   const monthlyPayment = loanAmount * interestRate / (1 - Math.pow(1 + interestRate, -repaymentPeriod));
+      const monthlyPayment = (SI+loanAmount)/(12*repaymentPeriod);
+      const totalPayment = SI+loanAmount;
+      const totalInterest = SI;
+    
+      // Display payment information
+      document.getElementById("monthlyPayment").value = monthlyPayment.toFixed(2);
+      document.getElementById("totalPayment").value = totalPayment.toFixed(2);
+      document.getElementById("totalInterest").value = totalInterest.toFixed(2);
+    }
+    </script>
+</body>
+
+</html>
