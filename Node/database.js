@@ -1,12 +1,12 @@
-import mysql from 'mysql2'
+import mysql from 'mysql2'// var mysql = require('mysql2)
 import dotenv from 'dotenv'
 dotenv.config();
 
 const pool = mysql.createPool({
     host: process.env.MYSQL_HOST,  // host:'127.0.0.1',
     user: process.env.MYSQL_USER,  // user: 'root',
-    password: process.env.MYSQL_PASSWORD, // password:'root',
-    database: process.env.MYSQL_DATABASE// database:'b1db'
+    password: process.env.MYSQL_PASSWORD,  // password:'root',
+    database: process.env.MYSQL_DATABASE   // database:'b1db'
 }).promise();
 
 export async function getNotes() {

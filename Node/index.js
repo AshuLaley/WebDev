@@ -13,7 +13,9 @@ app.use((err,req,res,next) => {
 
 
 app.get("/notes", function(req,resp){
-    resp.send("<h1> This should be notes!! </h1>");
+    const id = req.params.id;
+    const notes = await getNotes();
+    resp.send(notes)
 })
 
 app.get("/notes/:id", async function(req,resp){
