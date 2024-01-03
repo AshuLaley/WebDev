@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/jquery.js"></script>
+    <script src="Q3.js"></script>
+    <script></script>
+    <title>Mad Libs</title>
+    <link rel="stylesheet" href="Q3.css" />
+  </head>
+  <body>
+    <h1 align="center">Mad Libs</h1>
+    <div id="div1">
+      <form action="madlibs.html" method="post">
+        <table align="center">
+          <tr>
+            <td><label for="pn">Person Name: </label></td>
+            <td><input type="text" id="pn" name="pn" /></td>
+          </tr>
+          <tr>
+            <td><label for="ch">Character: </label></td>
+            <td><input type="text" id="ch" name="ch" /></td>
+          </tr>
+          <tr>
+            <td><label for="ad">Adverb: </label></td>
+            <td><input type="text" id="ad" name="ad" /></td>
+          </tr>
+          <tr>
+            <td><label for="adj">Adjective: </label></td>
+            <td><input type="text" id="adj" name="adj" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <button type="button" id="click">Tell a Story</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <br />
+    <br />
+    <div id="div2">
+      <h1 align="center" id="title"></h1>
+      <div align="center" id="contents"></div>
+    </div>
+  </body>
+</html>
